@@ -6,27 +6,33 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import MessagesWindow from "./MessagesWindow";
+import MessageInput from "./MessageInput";
+import { Separator } from "@/components/ui/separator";
 
 const Chat = () => {
   return (
-    <ResizablePanelGroup
-      direction="horizontal"
-      className="  rounded-lg border  h-screen"
-    >
+    <ResizablePanelGroup direction="horizontal" className="  rounded-lg border">
       <ResizablePanel defaultSize={25}>
         <Chats />
       </ResizablePanel>
       <ResizableHandle withHandle />
       <ResizablePanel defaultSize={75}>
-        <ResizablePanelGroup direction="vertical">
-          <ResizablePanel defaultSize={20}>
-            <ChatToolbar />
-          </ResizablePanel>
-          <ResizableHandle />
-          <ResizablePanel defaultSize={80}>
-            <ChatBody />
-          </ResizablePanel>
-        </ResizablePanelGroup>
+        <div className="flex flex-col h-dvh ">
+          {/* <!-- Chat Toolbar --> */}
+
+          <ChatToolbar />
+          <Separator />
+
+          {/* <!-- Messages Window --> */}
+          <MessagesWindow />
+          <Separator />
+
+          {/* <!-- Message Input --> */}
+          <MessageInput />
+        </div>
+
+        <ChatBody />
       </ResizablePanel>
     </ResizablePanelGroup>
   );
