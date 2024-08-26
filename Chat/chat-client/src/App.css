@@ -6,6 +6,8 @@ body {
   --sb-track-color: #ffffff;
   --sb-thumb-color: #e0e0e0;
   --sb-size: 8px;
+  height: 100vh;
+  width: 100vw;
 }
 
 ::-webkit-scrollbar {

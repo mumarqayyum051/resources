@@ -8,7 +8,7 @@ const MessageInput = () => {
       <div className="flex h-full">
         {/* <!-- Input field --> */}
         <Input
-          className="flex-1 h-16 rounded-none ring-0"
+          className="flex-1 h-16 rounded-none"
           placeholder="Type and send message "
         />
 
